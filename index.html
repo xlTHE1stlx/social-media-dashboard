@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<title>Frontend Mentor | [Challenge Name Here]</title>
+		<link rel="stylesheet" href="style.css" />
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<!-- <style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style> -->
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div>
+					<h1>Social Media Dashboard</h1>
+					<h5>Totasl Followers: 23,004</h5>
+				</div>
+				<hr class="active" />
+				<div class="selectorTheme">
+					<h5>Dark Mode</h5>
+					<div class="toggle">
+						<!-- give class move -->
+						<span class="point"></span>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section class="containerMainCards">
+				<div class="cards" style="--color-enterprice: hsl(208, 92%, 53%)">
+					<div class="colorEnterprice"></div>
+					<div class="socialMedia">
+						<img class="logoEnterprice" src="./images/icon-facebook.svg" alt="logo Facebook" />
+						<p class="hastagName">@nathanf</p>
+					</div>
+					<h2 class="numbers">1987</h2>
+					<p class="textFolowers">Followers</p>
+					<p class="statistics good"><img src="./images/icon-up.svg" /> 12 Today</p>
+				</div>
+				<div class="cards" style="--color-enterprice: hsl(203, 89%, 53%)">
+					<div class="colorEnterprice"></div>
+					<div class="socialMedia">
+						<img class="logoEnterprice" src="./images/icon-twitter.svg" alt="logo Twitter" />
+						<p class="hastagName">@nathanf</p>
+					</div>
+					<h2 class="numbers">1044</h2>
+					<p class="textFolowers">Followers</p>
+					<p class="statistics good"><img src="./images/icon-up.svg" /> 99 Today</p>
+				</div>
+				<div
+					class="cards"
+					style="--color-enterprice: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%))"
+				>
+					<div class="colorEnterprice"></div>
+					<div class="socialMedia">
+						<img class="logoEnterprice" src="./images/icon-instagram.svg" alt="logo Instagram" />
+						<p class="hastagName">@realnathanf</p>
+					</div>
+					<h2 class="numbers">11k</h2>
+					<p class="textFolowers">Followers</p>
+					<p class="statistics good"><img src="./images/icon-up.svg" /> 1099 Today</p>
+				</div>
+				<div class="cards" style="--color-enterprice: hsl(348, 97%, 39%)">
+					<div class="colorEnterprice"></div>
+					<div class="socialMedia">
+						<img class="logoEnterprice" src="./images/icon-youtube.svg" alt="logo Youtube" />
+						<p class="hastagName">Nathan F.</p>
+					</div>
+					<h2 class="numbers">8239</h2>
+					<p class="textFolowers">Subscribers</p>
+					<p class="statistics bad"><img src="./images/icon-down.svg" /> 144 Today</p>
+				</div>
+			</section>
+			<section class="statisticCards">
+				<h2>Overview - Today</h2>
+				<div class="containerCardsTypeStatistics">
+					<p class="textInfo">Page Views</p>
+					<img src="./images/icon-facebook.svg" alt="logo Facebook" />
+					<h3 class="showNumberInfo">87</h3>
+					<div class="containerStatistics">
+						<img src="./images/icon-up.svg" alt="icon up" />
+						<p class="numberStatistics">3%</p>
+					</div>
+				</div>
+				<div class="containerCardsTypeStatistics">
+					<p class="textInfo">Likes</p>
+					<img src="./images/icon-facebook.svg" alt="logo Facebook" />
+					<h3 class="showNumberInfo">52</h3>
+					<div class="containerStatistics">
+						<img src="./images/icon-down.svg" alt="icon down" />
+						<p class="numberStatistics">2%</p>
+					</div>
+				</div>
+				<div class="containerCardsTypeStatistics">
+					<p class="textInfo">Likes</p>
+					<img src="./images/icon-instagram.svg" alt="logo Instagram" />
+					<h3 class="showNumberInfo">5462</h3>
+					<div class="containerStatistics">
+						<img src="./images/icon-up.svg" alt="icon up" />
+						<p class="numberStatistics">2257%</p>
+					</div>
+				</div>
+				<div class="containerCardsTypeStatistics">
+					<p class="textInfo">Profile Views</p>
+					<img src="./images/icon-instagram.svg" alt="logo Instagram" />
+					<h3 class="showNumberInfo">52k</h3>
+					<div class="containerStatistics">
+						<img src="./images/icon-up.svg" alt="icon up" />
+						<p class="numberStatistics">1375%</p>
+					</div>
+				</div>
+				<div class="containerCardsTypeStatistics">
+					<p class="textInfo">Retweets</p>
+					<img src="./images/icon-twitter.svg" alt="logo Twitter" />
+					<h3 class="showNumberInfo">117</h3>
+					<div class="containerStatistics">
+						<img src="./images/icon-up.svg" alt="icon up" />
+						<p class="numberStatistics">303%</p>
+					</div>
+				</div>
+				<div class="containerCardsTypeStatistics">
+					<p class="textInfo">Likes</p>
+					<img src="./images/icon-twitter.svg" alt="logo Twitter" />
+					<h3 class="showNumberInfo">507</h3>
+					<div class="containerStatistics">
+						<img src="./images/icon-up.svg" alt="icon up" />
+						<p class="numberStatistics">553%</p>
+					</div>
+				</div>
+				<div class="containerCardsTypeStatistics">
+					<p class="textInfo">Likes</p>
+					<img src="./images/icon-youtube.svg" alt="logo Youtube" />
+					<h3 class="showNumberInfo">107</h3>
+					<div class="containerStatistics">
+						<img src="./images/icon-down.svg" alt="icon down" />
+						<p class="numberStatistics">19%</p>
+					</div>
+				</div>
+				<div class="containerCardsTypeStatistics">
+					<p class="textInfo">Total Views</p>
+					<img src="./images/icon-youtube.svg" alt="logo Youtube" />
+					<h3 class="showNumberInfo">1407</h3>
+					<div class="containerStatistics">
+						<img src="./images/icon-down.svg" alt="icon down" />
+						<p class="numberStatistics">12%</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="attribution">
+			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+			Coded by <a href="#">Your Name Here</a>.
+		</footer>
+	</body>
+</html>
