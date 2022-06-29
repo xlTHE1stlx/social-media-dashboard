@@ -7,12 +7,12 @@
 	--color-text-main: hsl(0, 0%, 100%);
 	--color-text: hsl(228, 34%, 66%);
 	--color-toggle-theme: linear-gradient(45deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
-	--color-green: hsl(163, 72%, 41%);
+	/* --color-green: hsl(163, 72%, 41%);
 	--color-red: hsl(356, 69%, 56%);
 	--color-FB: hsl(208, 92%, 53%);
 	--color-TW: hsl(203, 89%, 53%);
 	--color-IG: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
-	--color-YT: hsl(348, 97%, 39%);
+	--color-YT: hsl(348, 97%, 39%); */
 }
 
 * {
@@ -186,14 +186,6 @@ main>section.containerMainCards>.cards>.statistics {
 	margin-bottom: 20px;
 }
 
-main>section.containerMainCards>.cards>.statistics.bad {
-	color: var(--color-red);
-}
-
-main>section.containerMainCards>.cards>.statistics.good {
-	color: var(--color-green);
-}
-
 main>section.statisticCards {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(200px, 1fr));
@@ -210,59 +202,50 @@ main>section.statisticCards>h2 {
 	font-size: 2rem;
 }
 
-main>section.statisticCards>div.containerCardsTypeStatistics:not(:nth-child(1)) {
+main>section.statisticCards>div.containerCardsTypeStatistics {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, minmax(30px, 50px));
-	/* text-align: center; */
-	/* align-content: center; */
-	/* align-items: baseline; */
-	/* align-items: stretch;
-	justify-content: end;
-	justify-items: end; */
-	padding: 10px 20px;
-	background-color: var(--theme-card-BG);
-	border-radius: 5px;
-}
-
-main>section.statisticCards>div.containerCardsTypeStatistics>.div.items {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, minmax(30px, 50px));
-	padding: 10px 20px;
-	background-color: var(--theme-card-BG);
-	border-radius: 5px;
-}
-
-/* main>section.statisticCards>div.containerCardsTypeStatistics>*:nth-child(even) {
-	background: antiquewhite;
+	grid-template-rows: repeat(2, minmax(15px, 25px));
 	justify-items: end;
+	padding: 20px;
+	width: 100%;
+	row-gap: 15px;
+	border-radius: 5px;
+	background-color: var(--theme-card-BG);
 }
 
 main>section.statisticCards>div.containerCardsTypeStatistics>*:nth-child(odd) {
-	background: aqua;
-	justify-content: end;
-} */
-
-
-/* #ele {
-	resize: both;
-	overflow: scroll;
-	height: 120px;
-	width: clamp(50px, 60%, 500px);
-	background: greenyellow;
-	margin: 20px
+	display: flex;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-items: start;
 }
 
-#ele>.subEle {
+main>section.statisticCards>div.containerCardsTypeStatistics>*:nth-child(even) {
 	display: flex;
-	background: blueviolet;
-	height: clamp(50px, 60%, 150px);
-	width: clamp(100px, 90%, 300px);
-} */
+	justify-content: center;
+	align-items: center;
+}
+
+main>section.statisticCards>div.containerCardsTypeStatistics>p {
+	font-weight: 700;
+	color: var(--color-text);
+}
+
+main>section.statisticCards>div.containerCardsTypeStatistics>.showNumberInfo {
+	font-size: 2rem;
+	color: var(--color-text-main);
+}
 
 *.active {
 	display: none;
+}
+
+*:where(.bad, .good) {
+	color: var(--color-state);
+	font-weight: 700;
+	font-size: 1rem;
 }
 
 /* Media Query for the view on smarthphone */
