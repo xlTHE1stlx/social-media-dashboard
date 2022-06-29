@@ -238,6 +238,13 @@ main>section.statisticCards>div.containerCardsTypeStatistics>.showNumberInfo {
 	color: var(--color-text-main);
 }
 
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-text-main);
+}
+
 *.active {
 	display: none;
 }
