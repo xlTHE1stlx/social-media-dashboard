@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 :root {
-	--theme-BG: hsl(230, 17%, 14%);
-	--theme-top-BG: hsl(232, 19%, 15%);
-	--theme-card-BG: hsla(228, 28%, 20%);
-	--color-text-main: hsl(0, 0%, 100%);
-	--color-text: hsl(228, 34%, 66%);
-	--color-toggle-theme: linear-gradient(45deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+	--theme-BG: hsl(0, 0%, 100%);
+	--theme-top-BG: hsl(225, 100%, 98%);
+	--theme-card-BG: hsl(227, 47%, 96%);
+	--theme-card-BG-hover: hsl(227, 47%, 93%);
+	--color-text-main: hsl(230, 17%, 14%);
+	--color-text: hsl(228, 12%, 44%);
+	--color-toggle-theme: hsl(230, 22%, 74%);
+	--color-toggle-theme-hover: linear-gradient(45deg, hsl(146, 68%, 55%), hsl(210, 78%, 56%));
+
+	--time-transitions: 0.5s;
+	--type-transitions: cubic-bezier(0.22, 0.61, 0.36, 1);
 	/* --color-green: hsl(163, 72%, 41%);
 	--color-red: hsl(356, 69%, 56%);
 	--color-FB: hsl(208, 92%, 53%);
@@ -22,6 +27,15 @@
 	font-family: "Inter", sans-serif;
 	font-size: 14px;
 }
+
+/* html.dark {
+	--theme-BG: hsl(230, 17%, 14%);
+	--theme-top-BG: hsl(232, 19%, 15%);
+	--theme-card-BG: hsla(228, 28%, 20%);
+	--color-text-main: hsl(0, 0%, 100%);
+	--color-text: hsl(228, 34%, 66%);
+	--color-toggle-theme: linear-gradient(45deg, hsl(146, 68%, 55%), hsl(210, 78%, 56%));
+} */
 
 body {
 	display: grid;
@@ -115,6 +129,7 @@ main>section {
 	display: flex;
 	justify-content: center;
 	width: 80%;
+	transition: var(--time-transitions) var(--type-transitions) all;
 }
 
 main>section.containerMainCards {
@@ -210,7 +225,7 @@ main>section.statisticCards>div.containerCardsTypeStatistics {
 	width: 100%;
 	row-gap: 15px;
 	border-radius: 5px;
-	background-color: var(--theme-card-BG);
+	background: var(--theme-card-BG);
 }
 
 main>section.statisticCards>div.containerCardsTypeStatistics>*:nth-child(odd) {
@@ -254,6 +269,12 @@ footer {
 	font-size: 1rem;
 }
 
+*:is(section.containerMainCards, section.statisticCards:not(:first-child)) div:hover {
+	background: var(--theme-card-BG-hover);
+	cursor: pointer;
+	transition: var(--time-transitions) all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 /* Media Query for the view on smarthphone */
 @media screen and (max-width: 375px) {
 	body {
@@ -268,3 +289,14 @@ footer {
 		color: var(--color-text-main);
 	}
 }
+
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--theme-BG: hsl(230, 17%, 14%);
+		--theme-top-BG: hsl(232, 19%, 15%);
+		--theme-card-BG: hsla(228, 28%, 20%);
+		--color-text-main: hsl(0, 0%, 100%);
+		--color-text: hsl(228, 34%, 66%);
+		--color-toggle-theme: linear-gradient(45deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+	}
+} */
