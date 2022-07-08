@@ -37,6 +37,16 @@
 	--color-toggle-theme: linear-gradient(45deg, hsl(146, 68%, 55%), hsl(210, 78%, 56%));
 } */
 
+body.dark {
+	--theme-BG: hsl(230, 17%, 14%);
+	--theme-top-BG: hsl(232, 19%, 15%);
+	--theme-card-BG: hsla(228, 28%, 20%);
+	--theme-card-BG-hover: hsl(228, 28%, 25%);
+	--color-text-main: hsl(0, 0%, 100%);
+	--color-text: hsl(228, 34%, 66%);
+	--color-toggle-theme: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
 body {
 	display: grid;
 	grid-template-rows: minmax(120px, 150px) 1fr 50px;
