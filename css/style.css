@@ -11,7 +11,7 @@
 	--color-toggle-theme-hover: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 
 	--time-transitions: 0.5s;
-	--type-transitions: cubic-bezier(0.22, 0.61, 0.36, 1);
+	--type-transitions: ease-in-out;
 }
 
 * {
@@ -85,7 +85,6 @@ header>nav>div.selectorTheme {
 	display: flex;
 	align-items: center;
 	gap: 10px;
-
 }
 
 header>nav>div.selectorTheme>.toggle {
@@ -96,7 +95,7 @@ header>nav>div.selectorTheme>.toggle {
 	width: 50px;
 	height: 24px;
 	background: var(--color-toggle-theme);
-	/* transition: var(--time-transitions) all var(--type-transitions); */
+	transition: all var(--time-transitions) var(--type-transitions);
 }
 
 header>nav>div.selectorTheme>.toggle>span.point {
@@ -106,8 +105,8 @@ header>nav>div.selectorTheme>.toggle>span.point {
 	border-radius: 50%;
 	width: 18px;
 	height: 18px;
-	background-color: var(--theme-top-BG);
-	/* transition: var(--time-transitions) all var(--type-transitions); */
+	background: var(--theme-top-BG);
+	transition: all var(--time-transitions) var(--type-transitions);
 }
 
 header>nav>div.selectorTheme>div.toggle.move,
@@ -205,8 +204,6 @@ main>section.statisticCards {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(200px, 1fr));
 	grid-template-rows: minmax(30px, 50px) 1fr 1fr;
-	/* align-content: center;
-	justify-content: center; */
 	width: 80%;
 	height: clamp(20vh, 50%, 50vh);
 	gap: 20px;
@@ -286,7 +283,6 @@ footer {
 *:is(div.selectorTheme) .toggle:hover {
 	background: var(--color-toggle-theme-hover);
 	cursor: pointer;
-	/* transition: var(--time-transitions) all var(--type-transitions); */
 }
 
 /* Media Query for the view on smarthphone */
