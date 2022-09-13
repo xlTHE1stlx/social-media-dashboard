@@ -18,6 +18,8 @@
 				NOT_ALL = "not all",
 				COLOR_THEME = "color-theme",
 				NAME_ATTRIBUTE = "data-color",
+				DARK = "dark",
+				LIGHT = "light",
 				KNOWN_COLOR_SCHEME = ["dark", "light"],
 				PREFERENCE = localStorage.getItem(COLOR_THEME) || DEFAULT_VALUE;
 			if (!localStorage.getItem(COLOR_THEME))
@@ -38,26 +40,7 @@
 				D_E.classList ? D_E.classList.add(e) : (D_E.className += " " + e);
 				D_E.setAttribute(NAME_ATTRIBUTE, e);
 			}
-			// function removeColorScheme(e) {
-			// 	D_E.classList
-			// 		? D_E.classList.remove(e)
-			// 		: (D_E.className = D_E.className.replace(new RegExp(e, "g"), ""));
-			// 	D_E.removeAttribute(NAME_ATTRIBUTE);
-			// }
-			// W[__COLOR_THEME_] = {
-			// 	PREFERENCE,
-			// 	colorPrefer,
-			// 	getColorScheme,
-			// 	addColorScheme,
-			// 	removeColorScheme
-			// };
 		</script>
-		<link rel="stylesheet" href="./css/styleDark.css" media="(prefers-color-scheme: dark)" />
-		<link
-			rel="stylesheet"
-			href="./css/styleLight.css"
-			media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)"
-		/>
 		<link rel="stylesheet" href="./css/style.css" />
 		<script defer src="./js/index.js"></script>
 	</head>

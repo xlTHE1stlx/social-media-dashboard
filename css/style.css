@@ -1,14 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 :root {
-	/* --theme-BG: hsl(0, 0%, 100%);
-	--theme-top-BG: hsl(225, 100%, 98%);
-	--theme-card-BG: hsl(227, 47%, 96%);
-	--theme-card-BG-hover: hsl(227, 47%, 93%);
-	--color-text-main: hsl(230, 17%, 14%);
-	--color-text: hsl(228, 12%, 44%);
-	--color-toggle-theme: hsl(230, 22%, 74%);
-	--color-toggle-theme-hover: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%)); */
 	color-scheme: light dark;
 
 	--time-transitions: 0.5s;
@@ -47,16 +39,6 @@ html[data-color="dark"] {
 
 html {
 	display: initial;
-}
-
-body.dark {
-	/* --theme-BG: hsl(230, 17%, 14%);
-	--theme-top-BG: hsl(232, 19%, 15%);
-	--theme-card-BG: hsla(228, 28%, 20%);
-	--theme-card-BG-hover: hsl(228, 28%, 25%);
-	--color-text-main: hsl(0, 0%, 100%);
-	--color-text: hsl(228, 34%, 66%);
-	--color-toggle-theme: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%)); */
 }
 
 body {
@@ -136,8 +118,7 @@ header>nav>div.selectorTheme>.toggle>span.point {
 	transition: all var(--time-transitions) all var(--type-transitions);
 }
 
-header>nav>div.selectorTheme>div.toggle.move,
-span.point {
+header>nav>div.selectorTheme>div.toggle.move {
 	display: flex;
 	justify-content: end;
 	transition: all var(--time-transitions) all var(--type-transitions);
@@ -291,6 +272,11 @@ footer {
 	transition: var(--time-transitions) all var(--type-transitions);
 }
 
+footer>a {
+	font-weight: 700;
+	color: var(--color-text);
+}
+
 *.active {
 	display: none;
 }
@@ -312,20 +298,37 @@ footer {
 	cursor: pointer;
 }
 
-/* Media Query for the view lesser than width 950px */
-@media screen and (min-width: 376px) and (max-width: 950px) {}
-
 /* Media Query for the view on smarthphone */
 @media screen and (max-width: 375px) {
+	*.active {
+		display: initial;
+	}
+
 	body {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		justify-items: center;
 		margin: 0 30px;
+		width: 100vw;
+		height: auto;
+		overflow: hidden;
 	}
 
 	header>nav {
+		display: flex;
+		flex-direction: column;
 		color: var(--color-text-main);
+	}
+
+	main>section {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	main>.statisticCards {
+		display: flex;
+		flex-direction: column;
 	}
 }
