@@ -5,6 +5,59 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			html {
+				display: none;
+			}
+		</style>
+		<script>
+			const W = window,
+				D_E = document.documentElement,
+				PREFERS_COLOR_SCHEME = "prefers-color-scheme",
+				DEFAULT_VALUE = "default",
+				NOT_ALL = "not all",
+				COLOR_THEME = "color-theme",
+				NAME_ATTRIBUTE = "data-color",
+				KNOWN_COLOR_SCHEME = ["dark", "light"],
+				PREFERENCE = localStorage.getItem(COLOR_THEME) || DEFAULT_VALUE;
+			if (!localStorage.getItem(COLOR_THEME))
+				localStorage.setItem(COLOR_THEME, DEFAULT_VALUE);
+			let colorPrefer = PREFERENCE === DEFAULT_VALUE ? getColorScheme() : PREFERENCE;
+			addColorScheme(colorPrefer);
+			function prefersColorScheme(e) {
+				return W.matchMedia(`(${PREFERS_COLOR_SCHEME}${e})`);
+			}
+			function getColorScheme() {
+				if (W.matchMedia && prefersColorScheme("").media !== NOT_ALL) {
+					for (const e of KNOWN_COLOR_SCHEME)
+						if (prefersColorScheme(`:${e}`).matches) return e;
+				}
+				return KNOWN_COLOR_SCHEME[0];
+			}
+			function addColorScheme(e) {
+				D_E.classList ? D_E.classList.add(e) : (D_E.className += " " + e);
+				D_E.setAttribute(NAME_ATTRIBUTE, e);
+			}
+			// function removeColorScheme(e) {
+			// 	D_E.classList
+			// 		? D_E.classList.remove(e)
+			// 		: (D_E.className = D_E.className.replace(new RegExp(e, "g"), ""));
+			// 	D_E.removeAttribute(NAME_ATTRIBUTE);
+			// }
+			// W[__COLOR_THEME_] = {
+			// 	PREFERENCE,
+			// 	colorPrefer,
+			// 	getColorScheme,
+			// 	addColorScheme,
+			// 	removeColorScheme
+			// };
+		</script>
+		<link rel="stylesheet" href="./css/styleDark.css" media="(prefers-color-scheme: dark)" />
+		<link
+			rel="stylesheet"
+			href="./css/styleLight.css"
+			media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)"
+		/>
 		<link rel="stylesheet" href="./css/style.css" />
 		<script defer src="./js/index.js"></script>
 	</head>
@@ -29,7 +82,11 @@
 				<div class="cards" style="--color-enterprice: hsl(208, 92%, 53%)">
 					<div class="colorEnterprice"></div>
 					<div class="socialMedia">
-						<img class="logoEnterprice" src="./images/icon-facebook.svg" alt="logo Facebook" />
+						<img
+							class="logoEnterprice"
+							src="./images/icon-facebook.svg"
+							alt="logo Facebook"
+						/>
 						<p class="hastagName">@nathanf</p>
 					</div>
 					<h2 class="numbers">1987</h2>
@@ -41,7 +98,11 @@
 				<div class="cards" style="--color-enterprice: hsl(203, 89%, 53%)">
 					<div class="colorEnterprice"></div>
 					<div class="socialMedia">
-						<img class="logoEnterprice" src="./images/icon-twitter.svg" alt="logo Twitter" />
+						<img
+							class="logoEnterprice"
+							src="./images/icon-twitter.svg"
+							alt="logo Twitter"
+						/>
 						<p class="hastagName">@nathanf</p>
 					</div>
 					<h2 class="numbers">1044</h2>
@@ -52,11 +113,21 @@
 				</div>
 				<div
 					class="cards"
-					style="--color-enterprice: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%))"
+					style="
+						--color-enterprice: linear-gradient(
+							90deg,
+							hsl(37, 97%, 70%),
+							hsl(329, 70%, 58%)
+						);
+					"
 				>
 					<div class="colorEnterprice"></div>
 					<div class="socialMedia">
-						<img class="logoEnterprice" src="./images/icon-instagram.svg" alt="logo Instagram" />
+						<img
+							class="logoEnterprice"
+							src="./images/icon-instagram.svg"
+							alt="logo Instagram"
+						/>
 						<p class="hastagName">@realnathanf</p>
 					</div>
 					<h2 class="numbers">11k</h2>
@@ -68,7 +139,11 @@
 				<div class="cards" style="--color-enterprice: hsl(348, 97%, 39%)">
 					<div class="colorEnterprice"></div>
 					<div class="socialMedia">
-						<img class="logoEnterprice" src="./images/icon-youtube.svg" alt="logo Youtube" />
+						<img
+							class="logoEnterprice"
+							src="./images/icon-youtube.svg"
+							alt="logo Youtube"
+						/>
 						<p class="hastagName">Nathan F.</p>
 					</div>
 					<h2 class="numbers">8239</h2>
@@ -161,7 +236,9 @@
 				href="https://www.frontendmentor.io?ref=challenge"
 				target="https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H"
 				>Frontend Mentor</a
-			>. Coded by&nbsp;<a href="https://github.com/xlTHE1stlx/social-media-dashboard"> xlTHE1stlx</a>.
+			>. Coded by&nbsp;<a href="https://github.com/xlTHE1stlx/social-media-dashboard">
+				xlTHE1stlx</a
+			>.
 		</footer>
 	</body>
 </html>

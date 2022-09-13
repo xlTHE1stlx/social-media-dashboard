@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 :root {
-	--theme-BG: hsl(0, 0%, 100%);
+	/* --theme-BG: hsl(0, 0%, 100%);
 	--theme-top-BG: hsl(225, 100%, 98%);
 	--theme-card-BG: hsl(227, 47%, 96%);
 	--theme-card-BG-hover: hsl(227, 47%, 93%);
 	--color-text-main: hsl(230, 17%, 14%);
 	--color-text: hsl(228, 12%, 44%);
 	--color-toggle-theme: hsl(230, 22%, 74%);
-	--color-toggle-theme-hover: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+	--color-toggle-theme-hover: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%)); */
+	color-scheme: light dark;
 
 	--time-transitions: 0.5s;
 	--type-transitions: ease-in-out;
@@ -22,7 +23,18 @@
 	font-size: 14px;
 }
 
-body.dark {
+html[data-color="light"] {
+	--theme-BG: hsl(0, 0%, 100%);
+	--theme-top-BG: hsl(225, 100%, 98%);
+	--theme-card-BG: hsl(227, 47%, 96%);
+	--theme-card-BG-hover: hsl(227, 47%, 93%);
+	--color-text-main: hsl(230, 17%, 14%);
+	--color-text: hsl(228, 12%, 44%);
+	--color-toggle-theme: hsl(230, 22%, 74%);
+	--color-toggle-theme-hover: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+html[data-color="dark"] {
 	--theme-BG: hsl(230, 17%, 14%);
 	--theme-top-BG: hsl(232, 19%, 15%);
 	--theme-card-BG: hsla(228, 28%, 20%);
@@ -30,6 +42,21 @@ body.dark {
 	--color-text-main: hsl(0, 0%, 100%);
 	--color-text: hsl(228, 34%, 66%);
 	--color-toggle-theme: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+	--color-toggle-theme-hover: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+html {
+	display: initial;
+}
+
+body.dark {
+	/* --theme-BG: hsl(230, 17%, 14%);
+	--theme-top-BG: hsl(232, 19%, 15%);
+	--theme-card-BG: hsla(228, 28%, 20%);
+	--theme-card-BG-hover: hsl(228, 28%, 25%);
+	--color-text-main: hsl(0, 0%, 100%);
+	--color-text: hsl(228, 34%, 66%);
+	--color-toggle-theme: linear-gradient(80deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%)); */
 }
 
 body {
@@ -106,14 +133,14 @@ header>nav>div.selectorTheme>.toggle>span.point {
 	width: 18px;
 	height: 18px;
 	background: var(--theme-top-BG);
-	transition: all var(--time-transitions) var(--type-transitions);
+	transition: all var(--time-transitions) all var(--type-transitions);
 }
 
 header>nav>div.selectorTheme>div.toggle.move,
 span.point {
 	display: flex;
 	justify-content: end;
-	transition: all var(--time-transitions) var(--type-transitions);
+	transition: all var(--time-transitions) all var(--type-transitions);
 }
 
 main {
@@ -284,6 +311,9 @@ footer {
 	background: var(--color-toggle-theme-hover);
 	cursor: pointer;
 }
+
+/* Media Query for the view lesser than width 950px */
+@media screen and (min-width: 376px) and (max-width: 950px) {}
 
 /* Media Query for the view on smarthphone */
 @media screen and (max-width: 375px) {
