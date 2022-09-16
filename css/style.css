@@ -84,7 +84,7 @@ header>nav>div>h1 {
 	transition: var(--time-transitions) all var(--type-transitions);
 }
 
-header>nav>div>h5 {
+header>nav>div>h2 {
 	font-size: 1rem;
 	color: var(--color-text);
 	transition: var(--time-transitions) all var(--type-transitions);
